@@ -76,7 +76,7 @@ module Globalize # :nodoc:
           if !tr && idx != 0
             tr = ViewTranslation.create!(:tr_key => key,
               :language_id => language.id, :pluralization_index => idx,
-              :text => nil, :namespace => namespace)
+              :text => nil, :namespace => namespace, :built_in => false)
           end
         end
 

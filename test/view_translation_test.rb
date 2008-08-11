@@ -257,4 +257,8 @@ class ViewTranslationTest < Test::Unit::TestCase
     # phew!
   end
 
+  def test_new_translation_should_not_be_marked_as_built_in
+    'not_built_in_translation'.t # force creation
+    assert !ViewTranslation.find_by_tr_key('not_built_in_translation').built_in
+  end
 end
